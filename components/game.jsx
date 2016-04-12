@@ -21,7 +21,7 @@ var Game = React.createClass({
     alert('you lose!');
   },
   _goodJob: function() {
-    console.log("yes!");
+    this.setState({word: this.getWord()});
   },
   _badJob: function() {
     console.log("no!");
