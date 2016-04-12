@@ -1,14 +1,18 @@
 var React = require('react'),
     Words = require('../game/words'),
-    StringShuffle = require('../game/string_shuffle'),
+    Util = require('../game/util'),
     ShuffledWord = require('./shuffled_word'),
+    TargetWord = require('./target_word'),
+    ScoreBox = require('./score_box'),
     Countdown = require('./countdown');
 
 var Game = React.createClass({
   getInitialState: function() {
     return({
       word: this.getWord(),
-      level: 0
+      score: 0,
+      level: 0,
+      inPlay: true
     });
   },
   getWord: function() {
@@ -21,16 +25,24 @@ var Game = React.createClass({
     alert('you lose!');
   },
   _goodJob: function() {
-    this.setState({word: this.getWord()});
+    var newScore = this.state.score + 1;
+    var newLevel = Util.calculateLevel(newScore);
+    this.setState(
+      {
+        word: this.getWord(),
+        score: newScore,
+        level: newLevel
+      }
+    );
   },
   _badJob: function() {
-    console.log("no!");
+    this.setState({inPlay: false});
   },
-  _makeDecoyWords: function() {
+  _makeDecoys: function() {
     var decoyWords = [];
     while (decoyWords.length < 3) {
-      var decoy = StringShuffle.shuffle(this.state.word);
-      var swappedDecoy = StringShuffle.replaceLetterWithRandomCharacter(decoy);
+      var decoy = Util.shuffleWord(this.state.word);
+      var swappedDecoy = Util.replaceLetterWithRandomCharacter(decoy);
       if (swappedDecoy !== this.state.word) {
         decoyWords.push(swappedDecoy);
       }
@@ -38,15 +50,23 @@ var Game = React.createClass({
     return decoyWords;
   },
   _makeCorrectChoice: function() {
-    var word = StringShuffle.shuffle(this.state.word);
-    return <ShuffledWord word={word} clicked={this._goodJob} key={-1} />;
+    var correctWord = Util.shuffleWord(this.state.word);
+    return <ShuffledWord word={correctWord}
+                         clicked={this._goodJob}
+                         key={-1} />;
   },
   render: function() {
 
     var correctChoice = this._makeCorrectChoice();
-    var decoys = this._makeDecoyWords().map(function(word, i) {
-      return <ShuffledWord word={word} clicked={this._badJob} key={i} />;
+    var allChoices = [correctChoice];
+
+    this._makeDecoys().forEach(function(word, i) {
+      allChoices.push(
+        <ShuffledWord word={word} clicked={this._badJob} key={i} />
+                  );
     }.bind(this));
+
+    var shuffledChoices = Util.shuffleChoices(allChoices);
 
     return (
       <div>
@@ -54,12 +74,10 @@ var Game = React.createClass({
             initialTimeRemaining={5000}
             interval={50}
             completeCallback={this._timeIsUp} />
-        <div  className="daDiv"
-          onClick={this._handleClick}>{this.state.word}
-        </div>
+          <ScoreBox score={this.state.score} />
+          <TargetWord word={this.state.word}/>
         <ul>
-          {decoys}
-          {correctChoice}
+          {shuffledChoices}
         </ul>
       </div>
     );

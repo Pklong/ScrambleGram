@@ -30,7 +30,27 @@ var hard = [
 'boxer', 'brake', 'brand', 'brass', 'canal', 'caste', 'caved',
 'chess', 'click', 'clump', 'colts', 'codes', 'cruel',
 'dealt', 'decoy', 'deign', 'depot', 'diced', 'dined', 'droid',
-'drown', 'eager', 'elite', 'elude', 'evoke'
+'drown', 'eager', 'elite', 'elude', 'evoke', 'epoch', 'exact', 'erupt',
+'fault', 'fatal', 'favor', 'foods', 'filth', 'flood', 'fools', 'force',
+'forth', 'foxes', 'fuels', 'gland', 'glute', 'great', 'grill', 'grind',
+'hobos', 'hippo', 'hover', 'hurts', 'horse', 'house', 'inert', 'joint',
+'juicy', 'kiosk', 'koans', 'krill', 'laced', 'lambs', 'lapse', 'learn',
+'lemon', 'lingo', 'lungs', 'loops', 'macro', 'manor', 'medal', 'matte',
+'metal', 'merit', 'mirth', 'mommy', 'mould', 'nerds', 'niece', 'noble',
+'nymph', 'oasis', 'oaths', 'omens', 'otter', 'pagan', 'parka', 'pants',
+'patch', 'pedal', 'peers', 'peril', 'petal', 'piano', 'pizza', 'poker',
+'pooch', 'porch', 'posse', 'prank', 'pulse', 'pupil', 'purge', 'quake',
+'quell', 'rafts', 'range', 'rants', 'ratio', 'react', 'recap', 'recur',
+'reign', 'repel', 'retro', 'revel', 'ridge', 'rinse', 'risky', 'roast',
+'robot', 'rotor', 'royal', 'rumor', 'salad', 'salon', 'salsa', 'sassy',
+'savvy', 'scalp', 'scion', 'scowl', 'sepia', 'shank', 'sheep', 'shout', 'shrub',
+'sieve', 'sigil', 'siren', 'sixty', 'slugs', 'smarm', 'sonic', 'spike',
+'swing', 'tacos', 'talon', 'taunt', 'techy', 'teach', 'tenor', 'tents',
+'throb', 'tepid', 'theft', 'thick', 'thing'
+];
+
+var extreme = [
+
 ];
 
 var randomItem = function(list) {
@@ -47,5 +67,7 @@ module.exports = {
   getHardWord: function() {
     return randomItem(hard);
   },
-  getExtremeWord: function() {}
+  getExtremeWord: function() {
+    return randomItem(extreme);
+  }
 };
