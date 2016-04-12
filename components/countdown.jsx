@@ -16,7 +16,10 @@ var Countdown = React.createClass({
 
   componentWillReceiveProps: function(newProps) {
     if (this.state.timeoutId) { clearTimeout(this.state.timeoutId); }
-    this.setState({prevTime: null, timeRemaining: newProps.initialTimeRemaining});
+    this.setState({
+      prevTime: null,
+      timeRemaining: newProps.initialTimeRemaining
+    });
   },
 
   componentDidUpdate: function() {

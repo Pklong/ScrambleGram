@@ -10,6 +10,18 @@ module.exports = {
       letters[randomIdx] = letters[i];
       letters[i] = letterAtIdx;
     }
-    return letters.join('');
-  }
+
+    var newWord = letters.join('');
+    if (newWord === word) {
+      return this.shuffle(newWord);
+    } else {
+      return newWord;
+    }
+  },
+
+  replaceLetterWithRandomCharacter: function(word) {
+    var swapIdx = word.length - 1;
+    var randomLetter = String.fromCharCode(97 + Math.floor(Math.random() * 26));
+    return word.substr(0, swapIdx) + randomLetter + word.substr(swapIdx + 1);
+  },
 };
