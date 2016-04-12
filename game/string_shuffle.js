@@ -10,6 +10,6 @@ module.exports = {
       letters[randomIdx] = letters[i];
       letters[i] = letterAtIdx;
     }
-    return letters.join("");
+    return letters.join('');
   }
 };
