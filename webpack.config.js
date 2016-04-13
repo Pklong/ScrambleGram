@@ -1,8 +1,6 @@
-var path = require('path');
-
 module.exports = {
   context: __dirname,
-  entry: './scrambleGram.jsx',
+  entry: './scrambleGram.js',
   output: {
     path: './',
     filename: 'bundle.js'
@@ -21,7 +19,6 @@ module.exports = {
   },
   devtool: 'source-maps',
   resolve: {
-    extensions: ['', '.js', '.jsx'],
-    root: [path.resolve('./components')]
+    extensions: ['', '.js'],
   }
 };

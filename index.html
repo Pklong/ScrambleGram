@@ -3,12 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>ScrambleGram!</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="./main.css" charset="utf-8">
-    <script src="./bundle.js" charset="utf-8"></script>
   </head>
   <body>
-    <div id='root'>
-    </div>
+    <main id='root'>
+      <div id='countdown-timer'></div>
+      <div id='score-box'></div>
+      <p id='target-word'></p>
+      <p id='current-level'></p>
+      <ul id='choices-container'>
+        <button class='choice-button'></button>
+        <button class='choice-button'></button>
+        <button class='choice-button'></button>
+        <button class='choice-button'></button>
+      </ul>
+    </main>
+    <script src="./bundle.js" charset="utf-8"></script>
   </body>
 </html>

@@ -36,7 +36,10 @@ body {
   border: 5px solid blue;
   height: 60px;
   width: 200px;
+}
 
+.shuffled-word-choice:hover {
+  background: red;
 }
 
 .shuffled-word-enter {
