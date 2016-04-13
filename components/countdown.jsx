@@ -76,7 +76,7 @@ var Countdown = React.createClass({
     var timeRemaining = this.state.timeRemaining;
 
     return (
-      <div className='timer'>
+      <div className='countdown-timer-display'>
         {this.getFormattedTime(timeRemaining)}
       </div>
     );

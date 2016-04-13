@@ -67,6 +67,10 @@ var extreme = [
 'menace', 'mentor', 'metals', 'meteor', 'midway', 'minion'
 ];
 
+var insane = [
+  
+]
+
 var randomItem = function(list) {
   return list[Math.floor(Math.random() * list.length)];
 };

@@ -1,3 +1,5 @@
+var React = require('react');
+
 module.exports = {
   // Fisher-Yates shuffle
   shuffleWord: function(word) {
@@ -17,6 +19,11 @@ module.exports = {
     } else {
       return newWord;
     }
+  },
+  
+  shuffleDecoyWord: function(word) {
+    var shuffled = this.shuffleWord(word);
+    return this.replaceLetterWithRandomCharacter(shuffled);
   },
 
   calculateLevel: function(score) {

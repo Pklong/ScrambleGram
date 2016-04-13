@@ -3,7 +3,7 @@ var React = require('react');
 var TargetWord = React.createClass({
   render: function() {
     return (
-      <div className='daDiv'>{this.props.word}</div>
+      <div className='target-word-display'>{this.props.word}</div>
     );
   }
 });

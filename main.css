@@ -1,15 +1,68 @@
 body {
   font-family: 'Roboto Slab', serif;
   font-size: 24px;
+  text-align: center;
 }
 
-.daDiv {
-  display: block;
-  border: 5px solid pink;
-  height: 50px;
-  width: 100%;
+.container {
+  width: 800px;
+  height: 400px;
+  margin: auto;
 }
 
+.countdown-timer-display {
+
+}
+
+.score-box-display {
+
+}
+
+.target-word-display {
+
+}
+
+.level-display {
+
+}
+
+.choice-container {
+
+}
+
+
+.shuffled-word-choice {
+  border-radius: 5px;
+  border: 5px solid blue;
+  height: 60px;
+  width: 200px;
+
+}
+
+.shuffled-word-enter {
+  opacity: 0.01;
+  transform: translateX(-200%) translateY(-500%) rotate(45deg);
+}
+
+.shuffled-word-enter.shuffled-word-enter-active {
+  opacity: 1;
+  transform: translateX(0) translateY(0) rotate(0);
+  transition: all 500ms;
+}
+
+.shuffled-word-leave {
+  opacity: 1;
+  transform: translateX(0) translateY(0) rotate(0);
+}
+
+.shuffled-word-leave.example-leave-active {
+  opacity: 0.01;
+  transform: translateX(100%) translateY(500%) rotate(-45deg);
+  transition: all 500ms;
+}
+
+
+/* MODAL */
 .modal {
   display: block;
   position: fixed;

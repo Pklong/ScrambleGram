@@ -6,9 +6,13 @@ var ShuffledWord = React.createClass({
   },
   render: function() {
     return (
-      <div onClick={this._handleClick}>
-        {this.props.word}
-      </div>
+
+         <div
+              className='shuffled-word-choice'
+              onClick={this._handleClick}>
+           {this.props.word}
+         </div>
+
     );
   }
 });

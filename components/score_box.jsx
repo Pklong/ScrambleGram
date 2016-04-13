@@ -3,7 +3,7 @@ var React = require('react');
 var ScoreBox = React.createClass({
   render: function() {
     return (
-      <div>{this.props.score}</div>
+      <div className='score-box-display'>{this.props.score}</div>
     );
   }
 });

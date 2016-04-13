@@ -4,17 +4,20 @@ var React = require('react'),
     ShuffledWord = require('./shuffled_word'),
     TargetWord = require('./target_word'),
     ScoreBox = require('./score_box'),
+    Level = require('./level'),
+    ReactCSSTransitionGroup = require('react-addons-css-transition-group'),
     Countdown = require('./countdown');
 
 var Game = React.createClass({
   getInitialState: function() {
     return({
-      word: "fun",
+      word: Words.getEasyWord(),
       score: 0,
       level: 1,
       inPlay: true
     });
   },
+
   getWord: function() {
     var level = this.state.level;
     switch(level) {
@@ -28,12 +31,15 @@ var Game = React.createClass({
         return Words.getExtremeWord();
     }
   },
+
   _handleClick: function() {
     this.setState({word: this.getWord()});
   },
+
   _timeIsUp: function() {
     this.setState({inPlay: false});
   },
+
   _goodJob: function() {
     var newScore = this.state.score + 1;
     var newLevel = Util.calculateLevel(newScore);
@@ -45,71 +51,76 @@ var Game = React.createClass({
       }
     );
   },
+
+  assembleChoices: function() {
+    var choices = [],
+        word = this.state.word,
+        choice;
+    for (var i = 0; i < 4; i++) {
+      if (i === 0) {
+        choice = (
+          <ShuffledWord word={Util.shuffleWord(word)}
+                        clicked={this._goodJob}
+                        key={i} />
+                    );
+      } else {
+        choice = (
+          <ShuffledWord word={Util.shuffleDecoyWord(word)}
+                        clicked={this._wrongChoice}
+                        key={i} />
+                    );
+      }
+      choices.push(choice);
+    }
+    return Util.shuffleChoices(choices);
+  },
+
   _wrongChoice: function() {
     this.setState({inPlay: false});
   },
-  _makeDecoys: function() {
-    var decoyWords = [];
-    while (decoyWords.length < 3) {
-      var decoy = Util.shuffleWord(this.state.word);
-      var swappedDecoy = Util.replaceLetterWithRandomCharacter(decoy);
-      if (swappedDecoy !== this.state.word) {
-        decoyWords.push(swappedDecoy);
-      }
-    }
-    return decoyWords;
-  },
-  _makeCorrectChoice: function() {
-    var correctWord = Util.shuffleWord(this.state.word);
-    return <ShuffledWord word={correctWord}
-                         clicked={this._goodJob}
-                         key={-1} />;
-  },
+
   _restart: function() {
     this.setState({
+      word: this.getWord(),
       inPlay: true,
       score: 0,
       level: 1
     });
   },
+
   render: function() {
-
-    var correctChoice = this._makeCorrectChoice();
-    var allChoices = [correctChoice];
-
-    this._makeDecoys().forEach(function(word, i) {
-      allChoices.push(
-        <ShuffledWord word={word} clicked={this._wrongChoice} key={i} />
-                  );
-    }.bind(this));
-
-    var shuffledChoices = Util.shuffleChoices(allChoices);
+    var timeRemaining = 5000;
+    var shuffledChoices = this.assembleChoices();
 
     var modal = '';
     if (!this.state.inPlay) {
       modal = (
-        <div className="modal">
-          <div className="modal-content">
+        <div className='modal'>
+          <div className='modal-content'>
             <h2>You Lost!</h2>
             <button onClick={this._restart}>Restart Game</button>
           </div>
         </div>
       );
+      timeRemaining = 0;
     }
 
     return (
-      <div>
+      <div className='container'>
         {modal}
-        <Countdown
-            initialTimeRemaining={5000}
-            interval={50}
-            completeCallback={this._timeIsUp} />
+        <Countdown initialTimeRemaining={timeRemaining}
+                   interval={50}
+                   completeCallback={this._timeIsUp} />
           <ScoreBox score={this.state.score} />
           <TargetWord word={this.state.word}/>
-          <p>{this.state.level}</p>
-        <ul>
-          {shuffledChoices}
-        </ul>
+          <Level level={this.state.level} />
+          <ul className='choice-container'>
+            <ReactCSSTransitionGroup transitionName="shuffled-word"
+                                     transitionEnterTimeout={500}
+                                     transitionLeaveTimeout={500}>
+              {shuffledChoices}
+            </ReactCSSTransitionGroup>
+          </ul>
       </div>
     );
   }
