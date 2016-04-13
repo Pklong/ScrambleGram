@@ -1,5 +1,4 @@
-var React = require('react'),
-    RaisedButton = require('material-ui/lib/raised-button').RaisedButton;
+var React = require('react');
 
 var ShuffledWord = React.createClass({
   _handleClick: function() {

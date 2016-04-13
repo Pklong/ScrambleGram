@@ -32,7 +32,7 @@ var Game = React.createClass({
     this.setState({word: this.getWord()});
   },
   _timeIsUp: function() {
-    alert('you lose!');
+    this.setState({inPlay: false});
   },
   _goodJob: function() {
     var newScore = this.state.score + 1;
@@ -65,6 +65,13 @@ var Game = React.createClass({
                          clicked={this._goodJob}
                          key={-1} />;
   },
+  _restart: function() {
+    this.setState({
+      inPlay: true,
+      score: 0,
+      level: 1
+    });
+  },
   render: function() {
 
     var correctChoice = this._makeCorrectChoice();
@@ -78,8 +85,21 @@ var Game = React.createClass({
 
     var shuffledChoices = Util.shuffleChoices(allChoices);
 
+    var modal = '';
+    if (!this.state.inPlay) {
+      modal = (
+        <div className="modal">
+          <div className="modal-content">
+            <h2>You Lost!</h2>
+            <button onClick={this._restart}>Restart Game</button>
+          </div>
+        </div>
+      );
+    }
+
     return (
       <div>
+        {modal}
         <Countdown
             initialTimeRemaining={5000}
             interval={50}
