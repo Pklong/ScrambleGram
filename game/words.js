@@ -50,7 +50,21 @@ var hard = [
 ];
 
 var extreme = [
-
+'absent', 'abated', 'abound', 'accede', 'absorb', 'advise', 'airbag', 'albino', 'aliens', 'allows',
+'angels', 'anemic', 'animal', 'anthem', 'apollo', 'archer',
+'armory', 'artist', 'ascend', 'asthma', 'aspire', 'attest', 'audits', 'awoken', 'baboon', 'badger', 'ballet', 'beanie', 'beauty', 'behest',
+'bellow', 'biased', 'beware', 'biopic', 'bitter', 'bobcat', 'bomber', 'bottom', 'bounds', 'breach',
+'bridal', 'brooms', 'bubble', 'builds', 'burlap', 'bushel', 'butler', 'cabals', 'byline', 'cactus',
+'canola', 'carnal', 'carpet', 'catnip', 'cavity', 'cereal', 'chance', 'cheeky', 'cherry', 'choice',
+'clergy', 'coffee', 'combos', 'cyborg', 'damsel', 'dampen', 'daybed', 'debunk', 'deepen', 'deject',
+'dental', 'depots', 'device', 'devote', 'dimwit', 'dotage', 'drapes', 'earned', 'embryo', 'enough',
+'envied', 'errand', 'ethics', 'fandom', 'fennel', 'flirty', 'floral', 'follow', 'forage', 'fridge',
+'fungus', 'galore', 'garage', 'gasped', 'gelato', 'gerbil', 'glares', 'golfer', 'gothic', 'hacked',
+'hangup', 'haters', 'healer', 'heaven', 'herald', 'hidden', 'hobbit', 'hitman', 'horses', 'hungry',
+'infamy', 'infant', 'intern', 'jailor', 'jalopy', 'jester', 'joyful', 'juicer', 'jovial', 'kicked',
+'knives', 'lambda', 'lanced', 'larger', 'lasers', 'lawyer', 'leader', 'leases', 'ledger', 'lemons',
+'lichen', 'lifted', 'liquor', 'locust', 'loudly', 'lyrics', 'maxims', 'master', 'medley', 'memoir',
+'menace', 'mentor', 'metals', 'meteor', 'midway', 'minion'
 ];
 
 var randomItem = function(list) {

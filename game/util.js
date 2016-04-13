@@ -20,7 +20,7 @@ module.exports = {
   },
 
   calculateLevel: function(score) {
-    switch(score) {
+    switch(true) {
       case (score < 5):
         return 1;
       case (score < 10):

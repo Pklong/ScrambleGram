@@ -9,14 +9,24 @@ var React = require('react'),
 var Game = React.createClass({
   getInitialState: function() {
     return({
-      word: this.getWord(),
+      word: "fun",
       score: 0,
-      level: 0,
+      level: 1,
       inPlay: true
     });
   },
   getWord: function() {
-    return Words.getEasyWord();
+    var level = this.state.level;
+    switch(level) {
+      case (1):
+        return Words.getEasyWord();
+      case (2):
+        return Words.getMediumWord();
+      case (3):
+        return Words.getHardWord();
+      case (4):
+        return Words.getExtremeWord();
+    }
   },
   _handleClick: function() {
     this.setState({word: this.getWord()});
@@ -35,7 +45,7 @@ var Game = React.createClass({
       }
     );
   },
-  _badJob: function() {
+  _wrongChoice: function() {
     this.setState({inPlay: false});
   },
   _makeDecoys: function() {
@@ -62,7 +72,7 @@ var Game = React.createClass({
 
     this._makeDecoys().forEach(function(word, i) {
       allChoices.push(
-        <ShuffledWord word={word} clicked={this._badJob} key={i} />
+        <ShuffledWord word={word} clicked={this._wrongChoice} key={i} />
                   );
     }.bind(this));
 
@@ -76,6 +86,7 @@ var Game = React.createClass({
             completeCallback={this._timeIsUp} />
           <ScoreBox score={this.state.score} />
           <TargetWord word={this.state.word}/>
+          <p>{this.state.level}</p>
         <ul>
           {shuffledChoices}
         </ul>

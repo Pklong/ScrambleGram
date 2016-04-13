@@ -1,3 +1,7 @@
+body {
+  font-family: 'Roboto Slab', serif;
+}
+
 .daDiv {
   display: block;
   border: 5px solid pink;
