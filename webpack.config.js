@@ -1,21 +1,9 @@
 module.exports = {
   context: __dirname,
-  entry: './scrambleGram.js',
+  entry: './lib/scrambleGram.js',
   output: {
-    path: './',
+    path: './lib',
     filename: 'bundle.js'
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['react']
-        }
-      }
-    ]
   },
   devtool: 'source-maps',
   resolve: {
