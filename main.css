@@ -1,91 +1,179 @@
+/* RESET */
+
+body main div p ul button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+  list-style: none;
+}
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+button {
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* BODY */
+
 body {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Orbitron', sans-serif;
   font-size: 24px;
   text-align: center;
 }
 
-.container {
-  width: 800px;
-  height: 400px;
+#root {
   margin: auto;
+  height: 100px;
+  text-align: center;
 }
 
-.countdown-timer-display {
-
+#score-box {
+  display: inline-block;
+  padding: 10px;
 }
 
-.score-box-display {
-
-}
-
-.target-word-display {
-
-}
-
-.level-display {
-
-}
-
-.choice-container {
-
-}
-
-
-.shuffled-word-choice {
+#target-word {
+  display: inline;
+  text-align: center;
   border-radius: 5px;
-  border: 5px solid blue;
+  border: 5px solid #a9a9a9;
+  width: 60px;
   height: 60px;
-  width: 200px;
+  line-height: 60px;
+  padding: 10px;
+  text-transform: uppercase;
 }
 
-.shuffled-word-choice:hover {
-  background: red;
+#current-level {
+  display: inline-block;
 }
 
-.shuffled-word-enter {
-  opacity: 0.01;
-  transform: translateX(-200%) translateY(-500%) rotate(45deg);
+#choices-container {
+  margin: auto;
+  width: 700px;
+  height: 400px;
 }
 
-.shuffled-word-enter.shuffled-word-enter-active {
-  opacity: 1;
-  transform: translateX(0) translateY(0) rotate(0);
-  transition: all 500ms;
-}
-
-.shuffled-word-leave {
-  opacity: 1;
-  transform: translateX(0) translateY(0) rotate(0);
-}
-
-.shuffled-word-leave.example-leave-active {
-  opacity: 0.01;
-  transform: translateX(100%) translateY(500%) rotate(-45deg);
-  transition: all 500ms;
-}
-
-
-/* MODAL */
-.modal {
+.choice-button {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 30px;
   display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  margin: auto;
+  width: 50%;
+  height: 60px;
+  cursor: pointer;
+  background: #000;
+  color: #fff;
+  border-radius: 5px;
+  border: 5px solid #60FF14;
+  padding: 10px;
+  transition: all .2s ease-in-out;
+  text-transform: uppercase;
 }
 
-.modal-content {
-  position: absolute;
-  z-index: 1000;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  padding: 50px;
-  margin-left: -250px;
-  transform: translateY(-50%);
-  background: white;
+.choice-button:hover {
+  transform: scale(1.2);
+  background: #fff;
+  color: #000;
+  letter-spacing: 8px;
+  border-radius: 0;
+  box-shadow: inset 0 0 0 5px #a9a9a9;
+}
+
+.pulse {
+  width: 10px;
+  height: 10px;
+  border: 5px solid #f7f14c;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  background-color: #716f42;
+  z-index: 10;
+}
+
+.dot {
+  margin: auto;
+  background: transparent;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  -webkit-animation: pulse 1s ease-out;
+  -moz-animation: pulse 1s ease-out;
+  animation: pulse 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  z-index: 1;
+  opacity: 0;
+}
+#countdown-timer {
+  display: inline-block;
+  font-size: 40px;
+  padding: 10px;
+  border: 5px solid #60FF14;
   border-radius: 5px;
+  margin: auto 5px;
+}
+
+@-moz-keyframes pulse {
+ 0% {
+    -moz-transform: scale(0.2);
+    opacity: 0.4;
+ }
+ 25% {
+    -moz-transform: scale(0.3);
+    opacity: 0.6;
+ }
+ 50% {
+    -moz-transform: scale(0.4);
+    opacity: 0.8;
+ }
+ 75% {
+    -moz-transform: scale(0.5);
+    opacity: 1.0;
+ }
+ 100% {
+    -moz-transform: scale(1);
+    opacity: 0.0;
+ }
+}
+
+@-webkit-keyframes "pulse" {
+ 0% {
+    -webkit-transform: scale(0.2);
+    opacity: 0.4;
+ }
+ 25% {
+    -webkit-transform: scale(0.3);
+    opacity: 0.6;
+ }
+ 50% {
+    -webkit-transform: scale(0.4);
+    opacity: 0.8;
+ }
+ 75% {
+    -webkit-transform: scale(0.5);
+    opacity: 1.0;
+ }
+ 100% {
+    -webkit-transform: scale(1);
+    opacity: 0.0;
+ }
 }

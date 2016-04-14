@@ -3,21 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>ScrambleGram!</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="./main.css" charset="utf-8">
   </head>
   <body>
     <main id='root'>
-      <div id='countdown-timer'></div>
-      <div id='score-box'></div>
       <p id='target-word'></p>
-      <p id='current-level'></p>
-      <ul id='choices-container'>
+      <div id='choices-container' class='group'>
         <button class='choice-button'></button>
         <button class='choice-button'></button>
+        <div id='score-box'></div>
+        <div class='dot'>
+          <div id='countdown-timer'></div>
+        </div>
+        <p id='current-level'></p>
         <button class='choice-button'></button>
         <button class='choice-button'></button>
-      </ul>
+      </div>
     </main>
     <script src="./bundle.js" charset="utf-8"></script>
   </body>
