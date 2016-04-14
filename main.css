@@ -134,19 +134,19 @@ body {
 
 @-moz-keyframes pulse {
  0% {
-    -moz-transform: scale(0.2);
+    -moz-transform: scale(0.4);
     opacity: 0.4;
  }
  25% {
-    -moz-transform: scale(0.3);
+    -moz-transform: scale(0.5);
     opacity: 0.6;
  }
  50% {
-    -moz-transform: scale(0.4);
+    -moz-transform: scale(0.6);
     opacity: 0.8;
  }
  75% {
-    -moz-transform: scale(0.5);
+    -moz-transform: scale(0.7);
     opacity: 1.0;
  }
  100% {
@@ -157,19 +157,19 @@ body {
 
 @-webkit-keyframes "pulse" {
  0% {
-    -webkit-transform: scale(0.2);
+    -webkit-transform: scale(0.4);
     opacity: 0.4;
  }
  25% {
-    -webkit-transform: scale(0.3);
+    -webkit-transform: scale(0.5);
     opacity: 0.6;
  }
  50% {
-    -webkit-transform: scale(0.4);
+    -webkit-transform: scale(0.6);
     opacity: 0.8;
  }
  75% {
-    -webkit-transform: scale(0.5);
+    -webkit-transform: scale(0.7);
     opacity: 1.0;
  }
  100% {
