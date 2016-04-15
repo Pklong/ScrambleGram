@@ -7,13 +7,33 @@
     <link rel="stylesheet" href="./assets/main.css" charset="utf-8">
   </head>
   <body>
+    <audio id="intro" src="./assets/countdown.mp3" loop="false">
+    </audio>
+    <audio id="music" src="./assets/scramblegram.mp3" loop="true">
+    </audio>
     <main id='root'>
+      <article id='introduction'>
+        <p>
+          OOOOOOOH NO NO NO NO!
+        </p>
+        <p>
+          All the words are <em>SCRAMBLED!!!</em>
+        </p>
+        <p>
+          Pick the scrambled word in five seconds from four choices...
+        </p>
+        <p>
+          PLEASE HURRY!
+        </p>
+        <button id='start'>Can't be too hard...</button>
+      </article>
       <p id='target-word'></p>
       <div id='choices-container' class='group'>
         <button class='choice-button'></button>
         <button class='choice-button'></button>
         <div id='score-box'></div>
-        <div class='dot'>
+        <button id='play-again'>Play Again!</button>
+        <div class='strobe'>
           <div id='countdown-timer'></div>
         </div>
         <p id='current-level'></p>

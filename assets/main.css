@@ -38,9 +38,27 @@ body {
   text-align: center;
 }
 
+#introduction {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fce8e8; /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #fce8e8 0%, #fe9090 45%, #ff1e1e 100%);
+  background: -webkit-linear-gradient(-45deg, #fce8e8 0%,#fe9090 45%,#ff1e1e 100%);
+  background: linear-gradient(135deg, #fce8e8 0%,#fe9090 45%,#ff1e1e 100%);
+  color: #000;
+  text-shadow: 1px 1px 2px #f7f14c;
+  z-index: 1;
+}
+
+#begin {
+  border: 5px solid
+}
+
 #root {
   margin: auto;
-  height: 100px;
   text-align: center;
 }
 
@@ -50,10 +68,11 @@ body {
 }
 
 #target-word {
+  background: #fff;
   display: inline;
   text-align: center;
   border-radius: 5px;
-  border: 5px solid #a9a9a9;
+  border: 5px solid #000;
   width: 60px;
   height: 60px;
   line-height: 60px;
@@ -94,26 +113,12 @@ body {
   color: #000;
   letter-spacing: 8px;
   border-radius: 0;
-  box-shadow: inset 0 0 0 5px #a9a9a9;
+  box-shadow: inset 0 0 0 5px #000;
 }
 
-.pulse {
-  width: 10px;
-  height: 10px;
-  border: 5px solid #f7f14c;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  border-radius: 30px;
-  background-color: #716f42;
-  z-index: 10;
-}
-
-.dot {
+.strobe {
   margin: auto;
   background: transparent;
-  -webkit-border-radius: 60px;
-  -moz-border-radius: 60px;
-  border-radius: 60px;
   -webkit-animation: pulse 1s ease-out;
   -moz-animation: pulse 1s ease-out;
   animation: pulse 1s ease-out;
@@ -123,13 +128,40 @@ body {
   z-index: 1;
   opacity: 0;
 }
+
 #countdown-timer {
+  background: #fff;
   display: inline-block;
   font-size: 40px;
-  padding: 10px;
+  padding: 20px;
   border: 5px solid #60FF14;
   border-radius: 5px;
-  margin: auto 5px;
+}
+
+.correct-choice {
+  background: #fff;
+  color: #000;
+  box-shadow: inset 0 0 0 5px #000;
+}
+
+#play-again {
+  margin: auto;
+  cursor: pointer;
+  display: none;
+  background: #fff;
+  font-size: 40px;
+  padding: 20px;
+  border: 5px solid #60FF14;
+  border-radius: 5px;
+}
+
+#play-again:hover {
+  background: #000;
+  color: #fff;
+  font-size: 40px;
+  padding: 20px;
+  border: 5px solid #60FF14;
+  border-radius: 5px;
 }
 
 @-moz-keyframes pulse {
@@ -165,11 +197,11 @@ body {
     opacity: 0.6;
  }
  50% {
-    -webkit-transform: scale(0.6);
+    -webkit-transform: scale(0.4);
     opacity: 0.8;
  }
  75% {
-    -webkit-transform: scale(0.7);
+    -webkit-transform: scale(0.5);
     opacity: 1.0;
  }
  100% {
