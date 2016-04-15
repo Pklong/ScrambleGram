@@ -11,7 +11,7 @@
     </audio>
     <audio id="music" src="./assets/scramblegram.mp3" loop="true">
     </audio>
-    <main id='root'>
+    <main id='root' class='group'>
       <article id='introduction'>
         <p>
           OOOOOOOH NO NO NO NO!
@@ -20,7 +20,10 @@
           All the words are <em>SCRAMBLED!!!</em>
         </p>
         <p>
-          Pick the scrambled word in five seconds from four choices...
+          Pick the scrambled version of the word displayed
+        </p>
+        <p>
+          You have five seconds and four choices...
         </p>
         <p>
           PLEASE HURRY!
@@ -31,15 +34,15 @@
       <div id='choices-container' class='group'>
         <button class='choice-button'></button>
         <button class='choice-button'></button>
-        <div id='score-box'></div>
-        <button id='play-again'>Play Again!</button>
-        <div class='strobe'>
-          <div id='countdown-timer'></div>
-        </div>
-        <p id='current-level'></p>
         <button class='choice-button'></button>
         <button class='choice-button'></button>
       </div>
+      <div id='score-box'></div>
+      <button id='play-again'>Play Again!</button>
+      <div class='strobe'>
+        <div id='countdown-timer'></div>
+      </div>
+      <p id='current-level'></p>
     </main>
     <script src="./lib/bundle.js" charset="utf-8"></script>
   </body>

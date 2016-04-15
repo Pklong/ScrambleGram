@@ -87,15 +87,16 @@ body {
 #choices-container {
   margin: auto;
   width: 700px;
-  height: 400px;
+  height: 150px;
 }
 
 .choice-button {
+  float: left;
   font-family: 'Orbitron', sans-serif;
   font-size: 30px;
   display: block;
-  margin: auto;
-  width: 50%;
+  margin: 10px;
+  width: 40%;
   height: 60px;
   cursor: pointer;
   background: #000;
