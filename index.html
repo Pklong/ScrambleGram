@@ -5,27 +5,19 @@
     <title>ScrambleGram!</title>
     <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="./assets/main.css" charset="utf-8">
-    <script type='text/javascript' src='./lib/wisDom.js'></script>
   </head>
   <body>
-    <audio id="intro" src="./assets/countdown.mp3">
-    </audio>
     <main id='root' class='group'>
       <article id='introduction'>
+        <h1>
+          ScrambleGram
+        </h1>
         <p>
-          OOOOOOOH NO NO NO NO!
+          Pick the scrambled version of the word displayed:
         </p>
+        <img src='./assets/example.png' alt='game example' />
         <p>
-          All the words are <em>SCRAMBLED!!!</em>
-        </p>
-        <p>
-          Pick the scrambled version of the word displayed
-        </p>
-        <p>
-          You have five seconds and four choices...
-        </p>
-        <p>
-          PLEASE HURRY!
+          You have five seconds per word.
         </p>
         <button id='start'>Can't be too hard...</button>
       </article>
@@ -42,6 +34,17 @@
         <div id='countdown-timer'></div>
       </div>
       <p id='current-level'></p>
+      <footer class='footer'>
+        <a href='https://github.com/Pklong/scramblegram'>
+          <img src='./assets/GitHub.png' alt='GitHub Icon'  />
+        </a>
+        <a href='http://www.pklong.io/'>
+          <img src='./assets/Portfolio.ico' alt='portfolio site'  />
+        </a>
+        <a href='https://www.linkedin.com/in/pklong'>
+          <img src='./assets/LinkedIn.png' alt='LinkedIn Icon'  />
+        </a>
+      </footer>
     </main>
     <script src="./lib/bundle.js" charset="utf-8"></script>
   </body>
