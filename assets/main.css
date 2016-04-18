@@ -32,11 +32,18 @@ button {
 button:focus {
   outline: none;
 }
+img {
+  display: block;
+  width: 100%;
+  margin: auto;
+}
 
-#introduction img {
+.example-container {
   border: 2px solid #0276FD;
   border-radius: 5px;
   padding: 5px;
+  max-width: 400px;
+  margin: auto;
 }
 
 footer img {
@@ -71,12 +78,15 @@ body {
   background: -webkit-linear-gradient(-45deg, #fce8e8 0%,#fe9090 45%,#ff1e1e 100%);
   background: linear-gradient(135deg, #fce8e8 0%,#fe9090 45%,#ff1e1e 100%);
   color: #000;
-  text-shadow: 2px 2px 4px #0276FD;
   z-index: 1;
 }
 
+#introduction > h1 {
+  text-shadow: 2px 2px 4px #0276FD;
+}
+
 #introduction p {
-  margin-top: 5%;
+  font-weight: 700;
 }
 
 #begin {
@@ -85,10 +95,11 @@ body {
 
 #start {
   font-family: 'Orbitron', sans-serif;
-  font-size: 30px;
+  font-size: 0.875em;
   display: block;
   margin: auto;
-  width: 50%;
+  width: 60%;
+  max-width: 300px;
   height: 60px;
   cursor: pointer;
   background: #000;
@@ -133,7 +144,7 @@ body {
 
 #choices-container {
   margin: auto;
-  width: 100%;
+  width: 90%;
   height: 150px;
 }
 
@@ -155,7 +166,7 @@ body {
   text-transform: uppercase;
 }
 
-.choice-button:hover {
+.choice-button-hover {
   transform: scale(1.2);
   background: #fff;
   color: #000;
