@@ -3,7 +3,7 @@
 [Play Here](http://pklong.io/scramblegram)
 
 ## Screenshot
-![Game View] (/assets/scramblegram.png "Game Screenshot")
+[![Game View](/assets/scramblegram.png)](http://pklong.io/scramblegram)
 
 ##Summary
 A mad dash to unscramble the word with only 5 seconds to spare. Each
@@ -15,7 +15,7 @@ are revealed below. Click the scrambled version of the target word from
 among the decoys before the timer hits zero.
 
 ##Technical Features
-- Mobile-first responsive design.
+- Mobile-first responsive design (landscape orientation for optimal view).
 - Background dynamically colors based on time-remaining.
 - Object oriented programming in JavaScript.
 - Instance variables track game state to prevent erroneous input.
