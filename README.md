@@ -14,6 +14,11 @@ The target word will appear at the top of the page. Four scrambled options
 are revealed below. Click the scrambled version of the target word from
 among the decoys before the timer hits zero.
 
+##Languages
+- JavaScript
+- CSS3
+- HTML
+
 ##Technical Features
 - Mobile-first responsive design (landscape orientation for optimal view).
 - Background dynamically colors based on time-remaining.
