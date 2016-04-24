@@ -1,6 +1,6 @@
 /* RESET */
 
-body main div p ul button {
+body main div p ul button article{
   margin: 0;
   padding: 0;
   border: 0;
@@ -38,34 +38,7 @@ img {
   margin: auto;
 }
 
-.example-container {
-  border: 2px solid #0276FD;
-  border-radius: 5px;
-  padding: 5px;
-  max-width: 400px;
-  margin: auto;
-}
-
-footer img {
-  width: 25px;
-  height: 25px;
-  display: inline-block;
-  border-radius: 50%;
-  padding: 5px;
-}
-footer img:hover {
-  margin: -5px;
-  border: 5px solid #0276FD;
-  background: #fff;
-}
-
-/* BODY */
-
-body {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 24px;
-  text-align: center;
-}
+/* INTRO SCREEN */
 
 #introduction {
   position: fixed;
@@ -73,33 +46,36 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: stretch;
   background: #fce8e8; /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #fce8e8 0%, #fe9090 45%, #ff1e1e 100%);
-  background: -webkit-linear-gradient(-45deg, #fce8e8 0%,#fe9090 45%,#ff1e1e 100%);
-  background: linear-gradient(135deg, #fce8e8 0%,#fe9090 45%,#ff1e1e 100%);
+  background: -moz-linear-gradient( #ff1e1e, #fce8e8);
+  background: -webkit-linear-gradient(#ff1e1e, #fce8e8);
+  background: linear-gradient(#ff1e1e, #fce8e8);
   color: #000;
   z-index: 1;
 }
 
 #introduction > h1 {
-  text-shadow: 2px 2px 4px #0276FD;
+  font-weight: 700;
+  font-size: 2em;
+  text-shadow: 4px 4px 8px #0276FD;
 }
 
 #introduction p {
   font-weight: 700;
-}
-
-#begin {
-  border: 5px solid
+  font-size: 1.25em;
 }
 
 #start {
   font-family: 'Orbitron', sans-serif;
-  font-size: 0.875em;
+  font-size: 1em;
   display: block;
   margin: auto;
   width: 60%;
-  max-width: 300px;
   height: 60px;
   cursor: pointer;
   background: #000;
@@ -113,6 +89,37 @@ body {
   color: #000;
   background: #fff;
 }
+
+.example-container {
+  border: 2px solid #0276FD;
+  border-radius: 5px;
+  padding: 5px;
+  width: 90%;
+  margin: auto;
+}
+
+/* BODY */
+footer img {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 5px;
+}
+footer img:hover {
+  margin: -5px;
+  border: 5px solid #0276FD;
+  background: #fff;
+}
+
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
+
+
 
 #root {
   margin: 60px auto;
