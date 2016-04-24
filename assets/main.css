@@ -91,7 +91,7 @@ img {
 }
 
 .example-container {
-  border: 2px solid #0276FD;
+  border: 5px solid #0276FD;
   border-radius: 5px;
   padding: 5px;
   width: 90%;
@@ -118,16 +118,21 @@ body {
 
 header {
   display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-around;
-  align-content: space-around;
-  padding: 10px;
+  justify-content: space-between;
+  padding: 0 5%;
 }
 
 #score-box {
+  border: 5px solid #0276FD;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.6);
 }
 #high-score {
+  border: 5px solid #0276FD;
+  padding: 10px;
+  background: #fff;
+  box-shadow: -4px 4px 4px 2px rgba(0, 0, 0, 0.6);
 }
 
 #target-word {
@@ -136,14 +141,23 @@ header {
   margin: auto;
   background: #fff;
   border-radius: 5px;
-  border: 5px solid #000;
+  border: 5px solid #0276FD;
+  box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.6);
   height: 60px;
   line-height: 60px;
   text-transform: uppercase;
 }
 
 #current-level {
-  display: inline-block;
+  border: 5px solid #0276FD;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 10%;
+  margin-bottom: 20px;
 }
 
 #choices-container {
@@ -184,18 +198,6 @@ header {
   box-shadow: inset 0 0 0 5px #000;
 }
 
-.strobe {
-  margin: auto;
-  background: transparent;
-  -webkit-animation: pulse 1s ease-out;
-  -moz-animation: pulse 1s ease-out;
-  animation: pulse 1s ease-out;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  z-index: 1;
-  opacity: 0;
-}
 
 #countdown-timer {
   background: #fff;
@@ -212,15 +214,23 @@ header {
   box-shadow: inset 0 0 0 5px #000;
 }
 
-#play-again {
-  margin: 30px auto;
-  cursor: pointer;
+.play-again-appear {
+  display: flex;
+}
+
+.play-again-hide {
   display: none;
+}
+
+#play-again {
+  margin: 30px auto 0 auto;
+  cursor: pointer;
   background: #fff;
   font-size: 40px;
   padding: 20px;
   border: 5px solid #0276FD;
   border-radius: 5px;
+  box-shadow: 0 4px 4px 2px rgba(0, 0, 0, 0.6);
 }
 
 #play-again:hover {
@@ -230,6 +240,64 @@ header {
   padding: 20px;
   border: 5px solid #0276FD;
   border-radius: 5px;
+}
+
+.bounce {
+  -webkit-animation: bounce 0.4s ease-out;
+  -moz-animation: bounce 0.4s ease-out;
+  animation: bounce 0.4s ease-out;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+@-moz-keyframes bounce {
+ 0% {
+    -moz-transform: scale(1.1);
+ }
+ 25% {
+    -moz-transform: scale(1.2);
+ }
+ 50% {
+    -moz-transform: scale(1.6);
+ }
+ 75% {
+    -moz-transform: scale(1.2);
+ }
+ 100% {
+    -moz-transform: scale(1.1);
+ }
+}
+
+@-webkit-keyframes "bounce" {
+ 0% {
+    -webkit-transform: scale(1.1);
+ }
+ 25% {
+    -webkit-transform: scale(1.2);
+ }
+ 50% {
+    -webkit-transform: scale(1.6);
+ }
+ 75% {
+    -webkit-transform: scale(1.2);
+ }
+ 100% {
+    -webkit-transform: scale(1.1);
+ }
+}
+
+.strobe {
+  margin: auto;
+  background: transparent;
+  -webkit-animation: pulse 1s ease-out;
+  -moz-animation: pulse 1s ease-out;
+  animation: pulse 1s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  z-index: 1;
+  opacity: 0;
 }
 
 @-moz-keyframes pulse {
