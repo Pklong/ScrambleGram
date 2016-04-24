@@ -131,7 +131,9 @@ header {
 }
 
 #target-word {
-  flex-basis: max-content;
+  min-width: 20%;
+  max-width: 30%;
+  margin: auto;
   background: #fff;
   border-radius: 5px;
   border: 5px solid #000;
@@ -211,7 +213,7 @@ header {
 }
 
 #play-again {
-  margin: auto;
+  margin: 30px auto;
   cursor: pointer;
   display: none;
   background: #fff;
