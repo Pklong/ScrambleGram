@@ -59,16 +59,9 @@ img {
   z-index: 2;
 }
 
-#introduction > h1 {
-  font-weight: 700;
-  font-size: 2em;
-  border: 5px solid #0276FD;
-  background: #fff;
-  display: flex;
-  margin: auto;
-  padding: 10px;
-  border-radius: 25px;
-  letter-spacing: 2px;
+.logo-container {
+  width: 60%;
+  align-self: center;
 }
 
 #introduction p {
@@ -79,8 +72,7 @@ img {
 #start {
   font-family: 'Orbitron', sans-serif;
   font-size: 1em;
-  display: block;
-  margin: auto;
+  align-self: center;
   width: 60%;
   height: 60px;
   cursor: pointer;
@@ -97,11 +89,11 @@ img {
 }
 
 .example-container {
+  align-self: center;
   border: 5px solid #0276FD;
   border-radius: 5px;
   padding: 5px;
-  width: 90%;
-  margin: auto;
+  width: 60%;
 }
 
 /* BODY */
