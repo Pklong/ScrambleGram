@@ -120,13 +120,19 @@ header {
   padding: 0 5%;
 }
 
+.logo-container-play {
+  flex: 1 1 auto;
+}
+
 #score-box {
+  align-self: flex-start;
   border: 5px solid #0276FD;
   padding: 10px;
   background: #fff;
   box-shadow: 4px 4px 4px 2px rgba(0, 0, 0, 0.6);
 }
 #high-score {
+  align-self: flex-start;
   border: 5px solid #0276FD;
   padding: 10px;
   background: #fff;
