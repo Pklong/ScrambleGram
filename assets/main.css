@@ -25,8 +25,6 @@ body main div p ul button article{
 
 button {
   outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
 }
 
 button:focus {
@@ -52,8 +50,6 @@ img {
   justify-content: space-around;
   align-content: stretch;
   background: #fff; /* Old browsers */
-  background: -moz-linear-gradient( #f00, #fff);
-  background: -webkit-linear-gradient(#f00, #fff);
   background: linear-gradient(#f00, #fff);
   color: #000;
   z-index: 2;
@@ -136,6 +132,7 @@ header {
 }
 
 #target-word {
+  align-self: center;
   margin: 0 auto 20px auto;
   background: #fff;
   border-radius: 5px;
@@ -232,6 +229,7 @@ header {
 }
 
 #play-again {
+  align-self: center;
   margin: 40px auto 20px auto;
   cursor: pointer;
   background: #fff;
@@ -249,157 +247,101 @@ header {
   padding: 20px;
   border: 5px solid #0276FD;
   border-radius: 5px;
+  animation: bounce 0.5s ease-out;
+  animation-iteration-count: infinite;
 }
 
 .shimmy {
-  -webkit-animation: shimmy 1s ease-out;
-  -moz-animation: shimmy 1s ease-out;
   animation: shimmy 1s ease-out;
-  -webkit-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
 
-@-moz-keyframes shimmy {
+@keyframes shimmy {
  0% {
-    -moz-transform: rotate(-30deg);
+    transform: rotate(-30deg);
  }
  25% {
-    -moz-transform: rotate(30deg);
+    transform: rotate(30deg);
  }
  50% {
-    -moz-transform: rotate(-30deg);
+    transform: rotate(-30deg);
  }
  75% {
-    -moz-transform: rotate(30deg);
+    transform: rotate(30deg);
  }
  100% {
-    -moz-transform: rotate(0);
- }
-}
-
-@-webkit-keyframes "shimmy" {
- 0% {
-    -webkit-transform: rotate(-30deg);
- }
- 25% {
-    -webkit-transform: rotate(30deg);
- }
- 50% {
-    -webkit-transform: rotate(-30deg);
- }
- 75% {
-    -webkit-transform: rotate(30deg);
- }
- 100% {
-    -webkit-transform: rotate(0);
+    transform: rotate(0);
  }
 }
 
 .bounce {
-  -webkit-animation: bounce 0.4s ease-out;
-  -moz-animation: bounce 0.4s ease-out;
   animation: bounce 0.4s ease-out;
-  -webkit-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
   animation-iteration-count: 1;
 }
 
-@-moz-keyframes bounce {
+@keyframes bounce {
  0% {
-    -moz-transform: scale(1.1);
+    transform: scale(1.1);
  }
  25% {
-    -moz-transform: scale(1.2);
+    transform: scale(1.2);
  }
  50% {
-    -moz-transform: scale(1.6);
+    transform: scale(1.6);
  }
  75% {
-    -moz-transform: scale(1.2);
+    transform: scale(1.2);
  }
  100% {
-    -moz-transform: scale(1.1);
- }
-}
-
-@-webkit-keyframes "bounce" {
- 0% {
-    -webkit-transform: scale(1.1);
- }
- 25% {
-    -webkit-transform: scale(1.2);
- }
- 50% {
-    -webkit-transform: scale(1.6);
- }
- 75% {
-    -webkit-transform: scale(1.2);
- }
- 100% {
-    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
  }
 }
 
 .strobe {
   margin: auto;
   background: transparent;
-  -webkit-animation: pulse 1s ease-out;
-  -moz-animation: pulse 1s ease-out;
   animation: pulse 1s ease-out;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
   z-index: 1;
   opacity: 0;
 }
 
-@-moz-keyframes pulse {
+@keyframes pulse {
  0% {
-    -moz-transform: scale(0.4);
+    transform: scale(0.4);
     opacity: 0.4;
  }
  25% {
-    -moz-transform: scale(0.5);
+    transform: scale(0.5);
     opacity: 0.6;
  }
  50% {
-    -moz-transform: scale(0.6);
+    transform: scale(0.6);
     opacity: 0.8;
  }
  75% {
-    -moz-transform: scale(0.7);
+    transform: scale(0.7);
     opacity: 1.0;
  }
  100% {
-    -moz-transform: scale(1);
+    transform: scale(1);
     opacity: 0.0;
  }
 }
 
-@-webkit-keyframes "pulse" {
- 0% {
-    -webkit-transform: scale(0.4);
-    opacity: 0.4;
- }
- 25% {
-    -webkit-transform: scale(0.5);
-    opacity: 0.6;
- }
- 50% {
-    -webkit-transform: scale(0.4);
-    opacity: 0.8;
- }
- 75% {
-    -webkit-transform: scale(0.5);
-    opacity: 1.0;
- }
- 100% {
-    -webkit-transform: scale(1);
-    opacity: 0.0;
- }
+.twirl {
+  animation: helicopter 1s ease-out;
+  animation-iteration-count: 1;
 }
 
+@keyframes helicopter {
+ 0% {
+    transform: rotate(0);
+ }
+ 100% {
+    transform: rotate(720deg);
+ }
+}
 
 .footer {
   margin: 10px;
