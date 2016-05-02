@@ -121,6 +121,7 @@ header {
   border: 5px solid #0276FD;
   padding: 10px;
   background: #fff;
+  white-space: nowrap;
 }
 
 #score-box {
@@ -129,6 +130,12 @@ header {
 
 #high-score {
   box-shadow: -4px 4px 4px 2px rgba(0, 0, 0, 0.6);
+}
+
+.play-logo-container {
+  padding: 0 15px 10px 15px;
+  margin-top: -6px;
+  align-self: center;
 }
 
 #target-word {
@@ -152,8 +159,8 @@ header {
   display: flex;
   justify-content: center;
   align-self: center;
-  width: 10%;
   margin: 0 0 20px 0;
+  white-space: nowrap;
 }
 
 #choices-container {
