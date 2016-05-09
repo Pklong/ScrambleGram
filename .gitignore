@@ -1,2 +1,7 @@
 bundle.js.map
 .DS_Store
+game.js
+scrambleGram.js
+util.js
+view.js
+words.js

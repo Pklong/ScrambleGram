@@ -17,11 +17,6 @@ body main div p ul button article{
  a {
    text-decoration: none;
  }
-.group:after {
-  content: "";
-  display: block;
-  clear: both;
-}
 
 button {
   outline: none;
